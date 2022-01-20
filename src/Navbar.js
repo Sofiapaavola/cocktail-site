@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 
 export default function NavBar() {
     return (
-      <Navbar style={{borderBottom: "1px solid pink"}}>
+      <Navbar style={navStyle}>
         <Navbar.Brand href="#home">sofia's cocktail site</Navbar.Brand>
         <Nav className="mr-auto">
                 <Nav.Link href="/home">Home</Nav.Link>
@@ -14,4 +14,9 @@ export default function NavBar() {
         </Nav>
       </Navbar>
     );
+}
+
+const navStyle = { 
+    borderBottom: "1px solid pink",
+    marginBottom: "15px"
 }

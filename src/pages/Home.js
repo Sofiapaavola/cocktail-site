@@ -1,11 +1,10 @@
 import React from 'react'
+import SearchBar from '../components/SearchBar'
 
 export default function Home() {
     return (
     <div>
-        <input type="text" 
-        placeholder="search for a cocktail..."/>
-        <button>search</button>
+        <SearchBar placeholder="search for a cocktail..."/>
     </div>
     )
 }
