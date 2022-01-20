@@ -1,12 +1,14 @@
-import React, { Component }  from 'react'
-import SearchBar from '../components/SearchBar'
+import React, { Component }  from 'react';
+import SearchBar from '../components/SearchBar';
+import CocktailCard from '../components/CocktailCard';
 
-class Home extends Component { 
+export default class Home extends Component { 
 
     state = {
-        cocktailResultsObject: null
+        cocktailResultsObject: [],
+        defaultCocktails: []
     }
-    
+
     getCocktails = async (e) => { 
         const cocktailResultsObject = this.state;
         const nameOfCocktail = e.target.elements.nameOfCocktail.value;
@@ -14,26 +16,16 @@ class Home extends Component {
         const apiCall = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nameOfCocktail}`);      
         const result = await apiCall.json();
 
-        this.setState({cocktailResultsObject: result})
-  }
+        this.setState({cocktailResultsObject: result.drinks})
+    }
 
     render() {
         return (
         <div>
             <SearchBar getCocktails={this.getCocktails} placeholder="search for a cocktail..."/>
-            {this.state.cocktailResultsObject != null ? 
-                <div>{this.state.cocktailResultsObject.drinks.map((cocktail) => {
-                    return (
-                    <div>
-                        <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink}/>
-                        <p key={cocktail.idDrink}> {cocktail.strDrink}</p>
-                    </div> 
-                    ) 
-                })}
-                </div> 
-                : 
-                <div></div>
-            }
+            <div className='container'>                
+                <CocktailCard results={this.state.cocktailResultsObject}/>
+            </div>
         </div>
         )
     }
@@ -91,4 +83,3 @@ class Home extends Component {
 // strTags: "IBA,ContemporaryClassic"
 // strVideo: null
 
-export default Home;

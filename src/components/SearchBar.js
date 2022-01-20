@@ -2,17 +2,21 @@ import React from 'react'
 
 export default function SearchBar(props) {
     return (
-    <form onSubmit={props.getCocktails}> 
-        <input type='text'
-        name="nameOfCocktail"
-        placeholder={props.placeholder}/>
-        <button style={buttonStyle} size='sm'>search</button>
+    <form style={{padding: '10px'}} onSubmit={props.getCocktails}> 
+        <div className='form-group'>
+            <input type='text'
+            className='sm form-control'
+            name='nameOfCocktail'
+            placeholder={props.placeholder}/>
+            <button className='btn' style={buttonStyle} size='sm'>search</button>
+        </div>
     </form>
     )
 }
 
 const buttonStyle = { 
     backgroundColor: 'pink',
-    marginLeft: '2px',
-    border: 'pink'
+    margin: '5px',
+    border: 'pink',
+    color: 'white'
 }
