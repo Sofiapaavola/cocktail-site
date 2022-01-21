@@ -1,18 +1,36 @@
-import React, { Component }  from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 
-export default class Instructions extends Component { 
+export default function Instructions(props) {
 
-    state = {
-        cocktailInstructionsObject: [],
-    }
+    const [activeRecipe, setActiveRecipe] = useState([])
+    const params = useParams();
 
-    render() {
-        console.log(this.props);
-
-        return (
-        <div>
-            
-        </div>
+    const fetchData = async () => {
+        const id = params.id;
+        const apiCall = await fetch(
+        `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
         )
+        const result = await apiCall.json()
+        setActiveRecipe(result.drinks[0])    
+        console.log(activeRecipe)
     }
+
+    useEffect(() => {
+    fetchData();
+    }, []);
+
+  return (
+      <div> 
+          <header>
+              <h1>{activeRecipe.strDrink} Instructions</h1>
+          </header>
+          <div>
+            <img src={activeRecipe.strDrinkThumb} alt={activeRecipe.strDrink}/>
+          </div>
+          <div>
+              <p>{activeRecipe.strInstructions}</p>
+          </div>
+      </div>
+  )  
 }

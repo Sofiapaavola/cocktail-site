@@ -11,10 +11,7 @@ export default function CocktailCard(props) {
                     <div className='card-body'>
                         <p className='card-text'> {cocktail.strDrink}</p>
                         <button className='btn' style={buttonStyle}>
-                            <Link to={{ 
-                            pathname: `/instructions/${cocktail.idDrink}`,
-                            state: { instruction: cocktail.strDrink }
-                            }}>View Instructions</Link>
+                            <Link to={ `/instructions/${cocktail.idDrink}`}>View Instructions</Link>
                         </button>
                     </div>
 
