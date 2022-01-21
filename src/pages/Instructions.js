@@ -21,7 +21,7 @@ export default function Instructions(props) {
     }, []);
 
   return (
-    <div> 
+    <div style={{margin: '0 auto'}}> 
         <CocktailInstructionsComponent result={instruction}/>
     </div>
   )  
