@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import SearchBar from '../components/SearchBar';
-import CocktailCard from '../components/CocktailCard';
+import CocktailCard from '../components/CocktailCard/CocktailCard';
 
 export default class Home extends Component { 
 

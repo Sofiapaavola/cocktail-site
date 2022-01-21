@@ -8,7 +8,7 @@ export default function CocktailInstructionsComponent(props) {
                 <h1>{props.result.strDrink} Instructions</h1>
                 <img className='img-fluid' src={props.result.strDrinkThumb} alt={props.result.strDrink}/>
             </div>
-            <div className='col card d-flex justify-content-around' style={{marginLeft: '5px', padding: '10px'}}>
+            <div className='col card d-flex' style={{marginLeft: '5px', padding: '10px'}}>
                 <div className='text-start'>
                     <h2>Ingredients</h2>
                     <ul className='list-group list-group-flush'>
@@ -19,7 +19,7 @@ export default function CocktailInstructionsComponent(props) {
                     </ul>
                     
                 </div>
-                <div className='text-start'>
+                <div className='text-start' style={{marginTop: '10px'}}>
                     <h2>Instructions</h2>
                     <p>{props.result.strInstructions}</p>
                 </div>

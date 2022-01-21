@@ -1,4 +1,11 @@
+@font-face {font-family: "Retro Board"; src: url("//db.onlinewebfonts.com/t/829d2aed7ff96d2ca1a2b4c75c970825.eot"); src: url("//db.onlinewebfonts.com/t/829d2aed7ff96d2ca1a2b4c75c970825.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/829d2aed7ff96d2ca1a2b4c75c970825.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/829d2aed7ff96d2ca1a2b4c75c970825.woff") format("woff"), url("//db.onlinewebfonts.com/t/829d2aed7ff96d2ca1a2b4c75c970825.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/829d2aed7ff96d2ca1a2b4c75c970825.svg#Retro Board") format("svg"); }
+
+* { 
+  font-family: "Retro Board"
+}
+
 body {
+  background-color: #F2D8B3 !important;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

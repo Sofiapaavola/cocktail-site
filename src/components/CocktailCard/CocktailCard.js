@@ -6,7 +6,7 @@ export default function CocktailCard(props) {
         <div className='row'>
             {props.results.map((cocktail) => {
                 return (
-                <div className='col-4 card' style={{width: '200px', padding: '10px', margin: '10px'}} key={cocktail.idDrink}>
+                <div className='col-4 card' style={{backgroundColor: '#EFD78D', width: '200px', padding: '10px', margin: '10px'}} key={cocktail.idDrink}>
                     <img  className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.strDrink}/>
                     <div className='card-body'>
                         <p className='card-text'> {cocktail.strDrink}</p>
@@ -22,9 +22,9 @@ export default function CocktailCard(props) {
 }
 
 const buttonStyle = { 
-    backgroundColor: 'pink',
+    backgroundColor: '#D76735',
     margin: '5px',
-    border: 'pink',
-    color: 'white',
+    border: '#D76735',
+    color: 'black',
     textDecoration: 'none'
 }

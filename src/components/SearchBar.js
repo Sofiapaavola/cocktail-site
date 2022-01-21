@@ -16,8 +16,7 @@ export default function SearchBar(props) {
 }
 
 const buttonStyle = { 
-    backgroundColor: 'pink',
+    backgroundColor: '#D76735',
     margin: '5px',
-    border: 'pink',
-    color: 'white'
+    border: '#D76735',
 }
