@@ -2,13 +2,14 @@ import React from 'react';
 
 export default function SearchBar(props) {
     return (
-    <form style={{padding: '10px'}} onSubmit={props.getCocktails}> 
-        <div className='form-group'>
+    <form classNa='form-inline' style={{padding: '10px'}} onSubmit={props.getCocktails}> 
+        <div className='input-group ' style={{width: '500px'}}>
             <input type='text'
-            className='sm form-control'
+            className='form-control mr-sm-2"'
             name='nameOfCocktail'
             placeholder={props.placeholder}/>
-            <button className='btn' style={buttonStyle} size='sm'>search</button>
+            <button className='btn my-2 my-sm-0' style={buttonStyle} size='sm'>search</button>
+
         </div>
     </form>
     )
