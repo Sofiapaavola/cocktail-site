@@ -21,15 +21,19 @@ export default function Instructions(props) {
     }, []);
 
   return (
-      <div> 
-          <header>
-              <h1>{activeRecipe.strDrink} Instructions</h1>
-          </header>
-          <div>
-            <img src={activeRecipe.strDrinkThumb} alt={activeRecipe.strDrink}/>
+      <div className='row' style={{margin: '10px'}}> 
+          <div className='col card'>
+            <h1>{activeRecipe.strDrink} Instructions</h1>
+            <img className='img-fluid' src={activeRecipe.strDrinkThumb} alt={activeRecipe.strDrink}/>
           </div>
-          <div>
-              <p>{activeRecipe.strInstructions}</p>
+          <div className='col card' style={{marginLeft: '5px'}}>
+              <h2>Ingredients</h2>
+                <p>{activeRecipe.strIngredient1}</p>
+                <p>{activeRecipe.strIngredient2}</p>
+                <p>{activeRecipe.strIngredient3}</p>
+                <p>{activeRecipe.strIngredient4}</p>
+              <h2>Instructions</h2>
+                 <p>{activeRecipe.strInstructions}</p>
           </div>
       </div>
   )  
