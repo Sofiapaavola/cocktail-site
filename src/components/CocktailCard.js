@@ -14,7 +14,6 @@ export default function CocktailCard(props) {
                             <Link to={ `/instructions/${cocktail.idDrink}`} style={buttonStyle}>View Instructions</Link>
                         </button>
                     </div>
-
                 </div> 
                 ) 
             })}
