@@ -1,6 +1,12 @@
 import React from 'react';
 
 export default function CocktailInstructionsComponent(props) {
+    
+    // function isEmpty(value){
+    //     return (value == null || value.length === 0);
+    // }
+
+      // need to add a function that can cover the ingredients and checks whether it is null or not
 
     return (
         <div className='row' style={{margin: '10px'}}> 
@@ -16,6 +22,11 @@ export default function CocktailInstructionsComponent(props) {
                         <li className='list-group-item'>{props.result.strIngredient2}</li>
                         <li className='list-group-item'>{props.result.strIngredient3}</li>
                         <li className='list-group-item'>{props.result.strIngredient4}</li>
+                        <li className='list-group-item'>{props.result.strIngredient5}</li>
+                        <li className='list-group-item'>{props.result.strIngredient6}</li>
+                        <li className='list-group-item'>{props.result.strIngredient7}</li>
+                        <li className='list-group-item'>{props.result.strIngredient8}</li>
+
                     </ul>
                     
                 </div>
