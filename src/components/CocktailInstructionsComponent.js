@@ -4,11 +4,11 @@ export default function CocktailInstructionsComponent(props) {
 
     return (
         <div className='row' style={{margin: '10px'}}> 
-            <div className='col card' style={{padding: '10px'}}>
+            <div className='col card' style={{backgroundColor: '#f2d8b3', borderColor: '#D76735', padding: '10px'}}>
                 <h1>{props.result.strDrink} Instructions</h1>
                 <img className='img-fluid' src={props.result.strDrinkThumb} alt={props.result.strDrink}/>
             </div>
-            <div className='col card d-flex' style={{marginLeft: '5px', padding: '10px'}}>
+            <div className='col card d-flex' style={{backgroundColor: '#f2d8b3', borderColor: '#D76735',  marginLeft: '5px', padding: '10px'}}>
                 <div className='text-start'>
                     <h2>Ingredients</h2>
                     <ul className='list-group list-group-flush'>
