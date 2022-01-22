@@ -16,6 +16,7 @@ export default class Home extends Component {
         const apiCall = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nameOfCocktail}`);      
         const result = await apiCall.json();
 
+        // todo: add some .then .. account for errors 
         this.setState({cocktailResultsObject: result.drinks})
     }
 

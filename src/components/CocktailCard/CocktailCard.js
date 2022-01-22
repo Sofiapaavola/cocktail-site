@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
 
 export default function CocktailCard(props) {
     return (
@@ -13,6 +14,7 @@ export default function CocktailCard(props) {
                         <button className='btn-sm' style={buttonStyle}>
                             <Link to={ `/instructions/${cocktail.idDrink}`} style={buttonStyle}>View Instructions</Link>
                         </button>
+                        <button ><FaHeart/></button>
                     </div>
                 </div> 
                 ) 

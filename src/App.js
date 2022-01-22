@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
+import Faves from './pages/Faves';
 import Support from './pages/Support';
 import Instructions from './pages/Instructions';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
+          <Route path="/faves" element={<Faves/>}/>
           <Route path="/support" element={<Support/>}/>
           <Route path="/instructions/:id" element={<Instructions/>}/>
         </Routes>
