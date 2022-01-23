@@ -28,8 +28,7 @@ export default function CocktailInstructionsComponent(props) {
                         {isEmpty(props.result.strIngredient6)}
                         {isEmpty(props.result.strIngredient7)}
                         {isEmpty(props.result.strIngredient8)}
-                    </ul>
-                    
+                    </ul>   
                 </div>
                 <div className='text-start' style={{marginTop: '10px'}}>
                     <h2>Instructions</h2>

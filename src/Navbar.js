@@ -15,6 +15,6 @@ export default function NavBar() {
 }
 
 const navStyle = { 
-    borderBottom: "1px solid #D76735",
+    borderBottom: "2px solid #D76735",
     marginBottom: "15px"
 }
