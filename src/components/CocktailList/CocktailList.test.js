@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CocktailCard from './CocktailCard';
+import CocktailList from './CocktailList';
 
 it("renders without crashing", () => { 
     const div = document.createElement("div"); 
-    ReactDOM.render(<CocktailCard></CocktailCard>, div)
+    ReactDOM.render(<CocktailList></CocktailList>, div)
 })

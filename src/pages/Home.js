@@ -1,12 +1,12 @@
 import React, { Component }  from 'react';
 import SearchBar from '../components/SearchBar';
-import CocktailCard from '../components/CocktailCard/CocktailCard';
+import CocktailList from '../components/CocktailList/CocktailList';
 
 export default class Home extends Component { 
 
     state = {
         cocktailResultsObject: [],
-        defaultCocktails: []
+        favourites: []
     }
 
     getCocktails = async (e) => { 
@@ -20,12 +20,20 @@ export default class Home extends Component {
         this.setState({cocktailResultsObject: result.drinks})
     }
 
+    addFavouriteCocktail = (cocktail) => { 
+        const newFavouriteCocktail = [...this.state.favourites, cocktail]
+        this.setState({favourites: newFavouriteCocktail})
+    }
+
     render() {
         return (
         <div>
             <SearchBar getCocktails={this.getCocktails} placeholder="search for a cocktail..."/>
-            <div className='container'>                
-                <CocktailCard results={this.state.cocktailResultsObject}/>
+            <div className='wide container'>     
+            <h2 className='text-start'>Cocktails</h2>           
+                <CocktailList handleFavouritesClick={this.addFavouriteCocktail} results={this.state.cocktailResultsObject}/>
+            <h2 className='text-start'>Faves</h2>   
+                <CocktailList results={this.state.favourites}/>
             </div>
         </div>
         )

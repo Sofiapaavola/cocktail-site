@@ -26,7 +26,6 @@ export default function CocktailInstructionsComponent(props) {
                         <li className='list-group-item'>{props.result.strIngredient6}</li>
                         <li className='list-group-item'>{props.result.strIngredient7}</li>
                         <li className='list-group-item'>{props.result.strIngredient8}</li>
-
                     </ul>
                     
                 </div>

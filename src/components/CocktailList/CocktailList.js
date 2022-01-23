@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 
-export default function CocktailCard(props) {
+export default function CocktailList(props) {
     return (
         <div className='row'>
             {props.results.map((cocktail) => {
@@ -14,7 +14,7 @@ export default function CocktailCard(props) {
                         <button className='btn-sm' style={buttonStyle}>
                             <Link to={ `/instructions/${cocktail.idDrink}`} style={buttonStyle}>View Instructions</Link>
                         </button>
-                        <button ><FaHeart/></button>
+                        <button onClick={ () => props.handleFavouritesClick(cocktail)}><FaHeart/></button>
                     </div>
                 </div> 
                 ) 

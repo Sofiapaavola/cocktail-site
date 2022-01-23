@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SearchBar(props) {
     return (
-    <form classNa='form-inline' style={{padding: '10px'}} onSubmit={props.getCocktails}> 
+    <form className='form-inline' style={{padding: '10px'}} onSubmit={props.getCocktails}> 
         <div className='input-group ' style={{width: '500px'}}>
             <input type='text'
             className='form-control mr-sm-2"'
