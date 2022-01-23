@@ -30,7 +30,7 @@ export default class Home extends Component {
         return (
         <div>
             <SearchBar getCocktails={this.getCocktails} placeholder="search for a cocktail..."/>
-            <div className='wide container'>     
+            <div style={{padding: '10px'}}>     
                 <Heading title="Cocktails"></Heading>  
                     <CocktailList handleFavouritesClick={this.addFavouriteCocktail} results={this.state.cocktailResultsObject}/>
                 <Heading title="Faves"></Heading>  
