@@ -9,7 +9,15 @@ export default class Home extends Component {
 
     state = {
         cocktailResultsObject: [],
-        favourites: []
+        favourites: [],
+    }
+
+    componentDidMount() {
+        const cocktailFavourites = JSON.parse(
+            localStorage.getItem('react-cocktail-app-favourites')
+        );
+        console.log(cocktailFavourites)
+        this.setState({favourites: cocktailFavourites})
     }
 
     getCocktails = async (e) => { 
@@ -23,16 +31,22 @@ export default class Home extends Component {
         this.setState({cocktailResultsObject: result.drinks})
     }
 
+    saveToLocalStorage = (items) => {
+        localStorage.setItem('react-cocktail-app-favourites', JSON.stringify(items))
+    }
+
     addFavouriteCocktail = (cocktail) => { 
-        const newFavouriteCocktail = [...this.state.favourites, cocktail]
-        this.setState({favourites: newFavouriteCocktail})
+        const newFavouriteCocktails = [...this.state.favourites, cocktail]
+        this.setState({favourites: newFavouriteCocktails});
+        this.saveToLocalStorage(newFavouriteCocktails);
     }
 
     removeFavouriteCocktail = (cocktail) => { 
-        const newFavouriteCocktail = this.state.favourites.filter( 
+        const newFavouriteCocktails = this.state.favourites.filter( 
             (favourite) => favourite.idDrink !== cocktail.idDrink
         );
-        this.setState({favourites: newFavouriteCocktail})
+        this.setState({favourites: newFavouriteCocktails});
+        this.saveToLocalStorage(newFavouriteCocktails);
     }
 
     render() {
