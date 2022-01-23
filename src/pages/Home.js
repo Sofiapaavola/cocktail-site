@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import SearchBar from '../components/SearchBar';
 import CocktailList from '../components/CocktailList/CocktailList';
+import Heading from '../components/Heading'; 
 
 export default class Home extends Component { 
 
@@ -30,10 +31,10 @@ export default class Home extends Component {
         <div>
             <SearchBar getCocktails={this.getCocktails} placeholder="search for a cocktail..."/>
             <div className='wide container'>     
-            <h2 className='text-start'>Cocktails</h2>           
-                <CocktailList handleFavouritesClick={this.addFavouriteCocktail} results={this.state.cocktailResultsObject}/>
-            <h2 className='text-start'>Faves</h2>   
-                <CocktailList results={this.state.favourites}/>
+                <Heading title="Cocktails"></Heading>  
+                    <CocktailList handleFavouritesClick={this.addFavouriteCocktail} results={this.state.cocktailResultsObject}/>
+                <Heading title="Faves"></Heading>  
+                    <CocktailList results={this.state.favourites}/>
             </div>
         </div>
         )
