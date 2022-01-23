@@ -28,6 +28,13 @@ export default class Home extends Component {
         this.setState({favourites: newFavouriteCocktail})
     }
 
+    removeFavouriteCocktail = (cocktail) => { 
+        const newFavouriteCocktail = this.state.favourites.filter( 
+            (favourite) => favourite.idDrink !== cocktail.idDrink
+        );
+        this.setState({favourites: newFavouriteCocktail})
+    }
+
     render() {
         return (
         <div>
@@ -44,6 +51,7 @@ export default class Home extends Component {
                     <div className='row'>
                         <CocktailList 
                         results={this.state.favourites}
+                        handleFavouritesClick={this.removeFavouriteCocktail} 
                         favouriteComponent={RemoveFavourite}
                         />
                     </div>
