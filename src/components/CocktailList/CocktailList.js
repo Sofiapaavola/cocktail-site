@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 
 export default function CocktailList(props) {
     return (
-        <div className='row'>
+        <div className='row' style={{overflowX:'auto', flexWrap: 'nowrap'}}>
             {props.results.map((cocktail) => {
                 return (
                 <div className='col-4 card' style={{backgroundColor: '#EFD78D', width: '200px', padding: '10px', margin: '10px'}} key={cocktail.idDrink}>
@@ -14,6 +14,7 @@ export default function CocktailList(props) {
                         <button className='btn-sm' style={buttonStyle}>
                             <Link to={ `/instructions/${cocktail.idDrink}`} style={buttonStyle}>View Instructions</Link>
                         </button>
+                        
                         <button className='btn-sm' style={heartButtonStyle} onClick={ () => props.handleFavouritesClick(cocktail)}><FaHeart/></button>
                     </div>
                 </div> 

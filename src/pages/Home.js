@@ -32,9 +32,13 @@ export default class Home extends Component {
             <SearchBar getCocktails={this.getCocktails} placeholder="search for a cocktail..."/>
             <div style={{padding: '10px'}}>     
                 <Heading title="Cocktails"></Heading>  
-                    <CocktailList handleFavouritesClick={this.addFavouriteCocktail} results={this.state.cocktailResultsObject}/>
+                    <div className='row'>
+                        <CocktailList handleFavouritesClick={this.addFavouriteCocktail} results={this.state.cocktailResultsObject}/>
+                    </div>
                 <Heading title="Faves"></Heading>  
-                    <CocktailList results={this.state.favourites}/>
+                    <div className='row'>
+                        <CocktailList results={this.state.favourites}/>
+                    </div>
             </div>
         </div>
         )
