@@ -14,13 +14,21 @@ export default function CocktailList(props) {
                         <button className='btn-sm' style={buttonStyle}>
                             <Link to={ `/instructions/${cocktail.idDrink}`} style={buttonStyle}>View Instructions</Link>
                         </button>
-                        <button onClick={ () => props.handleFavouritesClick(cocktail)}><FaHeart/></button>
+                        <button className='btn-sm' style={heartButtonStyle} onClick={ () => props.handleFavouritesClick(cocktail)}><FaHeart/></button>
                     </div>
                 </div> 
                 ) 
             })}
         </div> 
     ) 
+}
+
+const heartButtonStyle = {
+    color: '#643754',
+    fontSize: '100%',
+    border: '0', 
+    padding: '0', 
+    backgroundColor: '#EFD78D'
 }
 
 const buttonStyle = { 
