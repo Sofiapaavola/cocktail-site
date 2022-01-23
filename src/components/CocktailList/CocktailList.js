@@ -8,7 +8,7 @@ export default function CocktailList(props) {
         <div className='row' style={{overflowX:'auto', flexWrap: 'nowrap'}}>
             {props.results.map((cocktail) => {
                 return (
-                <div className='col-4 card' style={{backgroundColor: '#EFD78D', width: '200px', padding: '10px', margin: '10px'}} key={cocktail.idDrink}>
+                <div className='col-4 card' style={{backgroundColor: '#D76735', width: '300px', padding: '10px', margin: '10px'}} key={cocktail.idDrink}>
                     <img  className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.strDrink}/>
                     <div className='card-body'>
                         <p className='card-text'> {cocktail.strDrink}</p>
@@ -31,11 +31,11 @@ const heartButtonStyle = {
     fontSize: '100%',
     border: '0', 
     padding: '0', 
-    backgroundColor: '#EFD78D'
+    backgroundColor: '#D76735'
 }
 
 const buttonStyle = { 
-    backgroundColor: '#D76735',
+    backgroundColor: '#EFD78D',
     margin: '5px',
     border: '#D76735',
     color: 'black',

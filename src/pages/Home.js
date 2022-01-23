@@ -16,12 +16,10 @@ export default class Home extends Component {
         const cocktailFavourites = JSON.parse(
             localStorage.getItem('react-cocktail-app-favourites')
         );
-        console.log(cocktailFavourites)
         this.setState({favourites: cocktailFavourites})
     }
 
     getCocktails = async (e) => { 
-        const cocktailResultsObject = this.state;
         const nameOfCocktail = e.target.elements.nameOfCocktail.value;
         e.preventDefault();
         const apiCall = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nameOfCocktail}`);      
