@@ -21,19 +21,19 @@ export default function CocktailInstructionsComponent(props) {
                     <h2>Ingredients</h2>
                     <ul className='list-group list-group-flush'>
                         {isEmpty(props.result.strIngredient1)}
-                        {isEmpty(props.result.strIngredient2) }
-                        {isEmpty(props.result.strIngredient3) } 
-                        {isEmpty(props.result.strIngredient4) }
-                        {isEmpty(props.result.strIngredient5) }
-                        {isEmpty(props.result.strIngredient6) }
-                        {isEmpty(props.result.strIngredient7) }
-                        {isEmpty(props.result.strIngredient8) }
+                        {isEmpty(props.result.strIngredient2)}
+                        {isEmpty(props.result.strIngredient3)} 
+                        {isEmpty(props.result.strIngredient4)}
+                        {isEmpty(props.result.strIngredient5)}
+                        {isEmpty(props.result.strIngredient6)}
+                        {isEmpty(props.result.strIngredient7)}
+                        {isEmpty(props.result.strIngredient8)}
                     </ul>
                     
                 </div>
                 <div className='text-start' style={{marginTop: '10px'}}>
                     <h2>Instructions</h2>
-                    <p>{props.result.strInstructions}</p>
+                    <p style={{backgroundColor: 'white'}}>{props.result.strInstructions}</p>
                 </div>
             </div>
         </div>
