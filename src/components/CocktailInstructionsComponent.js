@@ -10,8 +10,6 @@ export default function CocktailInstructionsComponent(props) {
         else return( <div></div>);
     }
 
-      // need to add a function that can cover the ingredients and checks whether it is null or not
-
     return (
         <div className='row' style={{margin: '10px'}}> 
             <div className='col card' style={{backgroundColor: '#f2d8b3', borderColor: '#D76735', padding: '10px'}}>
@@ -30,14 +28,6 @@ export default function CocktailInstructionsComponent(props) {
                         {isEmpty(props.result.strIngredient6) }
                         {isEmpty(props.result.strIngredient7) }
                         {isEmpty(props.result.strIngredient8) }
-
-                        {/* <li className='list-group-item'>{props.result.strIngredient2}</li>
-                        <li className='list-group-item'>{props.result.strIngredient3}</li>
-                        <li className='list-group-item'>{props.result.strIngredient4}</li>
-                        <li className='list-group-item'>{props.result.strIngredient5}</li>
-                        <li className='list-group-item'>{props.result.strIngredient6}</li>
-                        <li className='list-group-item'>{props.result.strIngredient7}</li>
-                        <li className='list-group-item'>{props.result.strIngredient8}</li> */}
                     </ul>
                     
                 </div>
