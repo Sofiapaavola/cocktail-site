@@ -2,6 +2,8 @@ import React, { Component }  from 'react';
 import SearchBar from '../components/SearchBar';
 import CocktailList from '../components/CocktailList/CocktailList';
 import Heading from '../components/Heading'; 
+import AddFavourite from '../components/AddFavourite';
+import RemoveFavourite from '../components/RemoveFavourite';
 
 export default class Home extends Component { 
 
@@ -33,11 +35,17 @@ export default class Home extends Component {
             <div style={{padding: '10px'}}>     
                 <Heading title="Cocktails"></Heading>  
                     <div className='row'>
-                        <CocktailList handleFavouritesClick={this.addFavouriteCocktail} results={this.state.cocktailResultsObject}/>
+                        <CocktailList 
+                        handleFavouritesClick={this.addFavouriteCocktail} 
+    					favouriteComponent={AddFavourite}
+                        results={this.state.cocktailResultsObject}/>
                     </div>
                 <Heading title="Faves"></Heading>  
                     <div className='row'>
-                        <CocktailList results={this.state.favourites}/>
+                        <CocktailList 
+                        results={this.state.favourites}
+                        favouriteComponent={RemoveFavourite}
+                        />
                     </div>
             </div>
         </div>

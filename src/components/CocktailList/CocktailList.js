@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
 
 export default function CocktailList(props) {
+    const FavouriteComponent = props.favouriteComponent;
+
     return (
         <div className='row' style={{overflowX:'auto', flexWrap: 'nowrap'}}>
             {props.results.map((cocktail) => {
@@ -14,8 +15,9 @@ export default function CocktailList(props) {
                         <button className='btn-sm' style={buttonStyle}>
                             <Link to={ `/instructions/${cocktail.idDrink}`} style={buttonStyle}>View Instructions</Link>
                         </button>
-                        
-                        <button className='btn-sm' style={heartButtonStyle} onClick={ () => props.handleFavouritesClick(cocktail)}><FaHeart/></button>
+                        <button className='btn-sm' style={heartButtonStyle} onClick={ () => props.handleFavouritesClick(cocktail)}>
+                        <FavouriteComponent /> 
+                        </button>
                     </div>
                 </div> 
                 ) 
