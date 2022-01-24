@@ -5,15 +5,12 @@ import About from './pages/About';
 import Support from './pages/Support';
 import Instructions from './pages/Instructions';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import { createBrowserHistory } from "history";
+import {HashRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
 
-  const history = createBrowserHistory();
-
   return (
-      <Router history={history}>
+      <Router>
       <div className="App">
         <Navbar/>
         <div className="content">
