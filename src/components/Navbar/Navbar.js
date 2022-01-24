@@ -1,17 +1,24 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
     return (
       <Navbar style={navStyle}>
         <Navbar.Brand href="/" data-testid="title">sofia's cocktail site</Navbar.Brand>
-        <Nav className="mr-auto">
-                <Nav.Link data-testid="home" href="/">Home</Nav.Link>
-                <Nav.Link data-testid="about" href="/about">About</Nav.Link>
-                <Nav.Link data-testid="support" href="/support">Support</Nav.Link>
+        <Nav className="me-auto">
+          <Link style={linkStyle} data-testid="home" to="/">Home</Link>
+          <Link style={linkStyle} data-testid="about" to="/about">About</Link>
+          <Link style={linkStyle} data-testid="support" to="/support">Support</Link>
         </Nav>
       </Navbar>
     );
+}
+
+const linkStyle = {
+  color: 'black',
+  padding: '10px', 
+  textDecoration: 'none'
 }
 
 const navStyle = { 
