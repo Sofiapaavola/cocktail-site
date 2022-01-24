@@ -13,7 +13,7 @@ export default function CocktailList(props) {
                     <div className='card-img-overlay text-white d-flex flex-column justify-content-center'>
                         <h1 className='card-title'> {cocktail.strDrink}</h1>
                         <button className='btn' style={buttonStyle}>
-                            <Link to={ `/instructions/${cocktail.idDrink}`} style={buttonStyle}>View Instructions</Link>
+                            <Link data-testid="instructionsButton" to={ `/instructions/${cocktail.idDrink}`} style={buttonStyle}>View Instructions</Link>
                         </button> 
                         <button className='btn' style={heartButtonStyle} onClick={() => props.handleFavouritesClick(cocktail)}>
                             <FavouriteComponent /> 

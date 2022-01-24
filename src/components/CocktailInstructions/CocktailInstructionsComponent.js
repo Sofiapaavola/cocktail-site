@@ -18,7 +18,7 @@ export default function CocktailInstructionsComponent(props) {
             </div>
             <div className='col card d-flex' style={{backgroundColor: '#f2d8b3', borderColor: '#D76735',  marginLeft: '5px', padding: '10px'}}>
                 <div className='text-start'>
-                    <h2>Ingredients</h2>
+                    <h2 data-testid="ingredientsTitle">Ingredients</h2>
                     <ul className='list-group list-group-flush'>
                         {isEmpty(props.result.strIngredient1)}
                         {isEmpty(props.result.strIngredient2)}
@@ -31,7 +31,7 @@ export default function CocktailInstructionsComponent(props) {
                     </ul>   
                 </div>
                 <div className='text-start' style={{marginTop: '10px'}}>
-                    <h2>Instructions</h2>
+                    <h2 data-testid="instructionsCardTitle">Instructions</h2>
                     <p style={{backgroundColor: 'white'}}>{props.result.strInstructions}</p>
                 </div>
             </div>

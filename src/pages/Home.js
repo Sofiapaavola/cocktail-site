@@ -1,9 +1,9 @@
 import React, { Component }  from 'react';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/SearchBar/SearchBar';
 import CocktailList from '../components/CocktailList/CocktailList';
-import Heading from '../components/Heading'; 
-import AddFavourite from '../components/AddFavourite';
-import RemoveFavourite from '../components/RemoveFavourite';
+import Heading from '../components/Heading/Heading';
+import AddFavourite from '../components/Favourites/AddFavourite';
+import RemoveFavourite from '../components/Favourites/RemoveFavourite';
 
 export default class Home extends Component { 
 
