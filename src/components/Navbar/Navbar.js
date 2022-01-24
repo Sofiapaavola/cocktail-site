@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
     return (
       <Navbar style={navStyle}>
-        <Navbar.Brand href="/#/cocktail-site" data-testid="title">sofia's cocktail site</Navbar.Brand>
+        <Navbar.Brand> 
+          <Link style={linkStyle} data-testid="title" to="/" >sofia's cocktail site</Link>
+        </Navbar.Brand>
         <Nav className="me-auto">
           <Link style={linkStyle} data-testid="home" to="/">Home</Link>
           <Link style={linkStyle} data-testid="about" to="/about">About</Link>
