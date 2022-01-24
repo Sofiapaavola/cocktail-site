@@ -5,7 +5,7 @@ import About from './pages/About';
 import Support from './pages/Support';
 import Instructions from './pages/Instructions';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {HashRouter as Router, Route, Routes} from 'react-router-dom';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
 
@@ -14,12 +14,20 @@ function App() {
       <div className="App">
         <Navbar/>
         <div className="content">
-          <Routes>
-            <Route exact path="/" element={<Home/>}/>
-            <Route path="/about" element={<About/>}/>
-            <Route path="/support" element={<Support/>}/>
-            <Route path="/instructions/:id" element={<Instructions/>}/>
-          </Routes>
+          <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route path="/about">
+              <About/>
+            </Route> 
+            <Route path="/support">
+              <Support/>
+            </Route>
+            <Route path="/instructions/:id">
+              <Instructions/>
+            </Route>
+          </Switch>
         </div>
       </div>
       </Router>
