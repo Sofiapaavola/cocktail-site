@@ -10,7 +10,7 @@ import {HashRouter as Router, Route, Routes} from 'react-router-dom';
 function App() {
 
   return (
-      <Router>
+      <Router >
       <div className="App">
         <Navbar/>
         <div className="content">
