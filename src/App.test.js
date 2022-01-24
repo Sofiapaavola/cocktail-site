@@ -10,3 +10,21 @@ describe("<App />", () => {
   });
 });
 
+// const addTask = (tasks) => {
+//   const inputElement = screen.getByPlaceholderText(/search for a cocktail.../i);
+//   const buttonElement = screen.getByRole("button", { name: /Search/i} );
+//   tasks.forEach((task) => {
+//       fireEvent.change(inputElement, { target: { value: task } });
+//       fireEvent.click(buttonElement);
+//   })
+// }
+
+// it('should be able to type into input', () => {
+//   render(
+//       <MockApp />
+//   );
+//   addTask(["Kiwi"])
+//   const divElement = screen.getByText(/Kiwi/i);
+//   expect(divElement).toBeInTheDocument()
+// });
+

@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-export default function CocktailList(props) {
-    const FavouriteComponent = props.favouriteComponent;
+export default function CocktailList({
+    results, 
+    handleFavouritesClick,
+    favouriteComponent
+}) {
+    const FavouriteComponent = favouriteComponent;
 
     return (
         <div className='row' style={{overflowX:'auto', flexWrap: 'nowrap'}}>
-            {props.results.map((cocktail) => {
+            {results.map((cocktail) => {
                 return (
                 <div className='card hover-styles' style={{backgroundColor: '#D76735', width: '500px', padding: '10px', margin: '10px'}} key={cocktail.idDrink}>
                     <img  className='card-img' src={cocktail.strDrinkThumb} alt={cocktail.strDrink}/>
@@ -15,7 +19,7 @@ export default function CocktailList(props) {
                         <button className='btn' style={buttonStyle}>
                             <Link data-testid="instructionsButton" to={ `/instructions/${cocktail.idDrink}`} style={buttonStyle}>View Instructions</Link>
                         </button> 
-                        <button className='btn' style={heartButtonStyle} onClick={() => props.handleFavouritesClick(cocktail)}>
+                        <button className='btn' style={heartButtonStyle} onClick={() => handleFavouritesClick(cocktail)}>
                             <FavouriteComponent /> 
                         </button>
                     </div>

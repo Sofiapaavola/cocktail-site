@@ -1,8 +1,6 @@
 import React from 'react';
 
-export default function CocktailInstructionsComponent({
-    result
-}) {
+export default function CocktailInstructionsComponent({result}) {
     
     function isEmpty(value){
         if (value !== null) {
@@ -14,11 +12,11 @@ export default function CocktailInstructionsComponent({
 
     return (
         <div className='row' style={{margin: '10px'}}> 
-            <div className='col card' style={{backgroundColor: '#f2d8b3', borderColor: '#D76735', padding: '10px'}}>
+            <div className='col card' style={leftCol}>
                 <h1 data-testid="mainInstructions">{result.strDrink} Instructions</h1>
-                <img className='img-fluid' src={result.strDrinkThumb} alt={result.strDrink}/>
+                <img className='card-img' src={result.strDrinkThumb} alt={result.strDrink}/>
             </div>
-            <div className='col card d-flex' style={{backgroundColor: '#f2d8b3', borderColor: '#D76735',  marginLeft: '5px', padding: '10px'}}>
+            <div className='col card d-flex' style={rightCol}>
                 <div className='text-start'>
                     <h2 data-testid="ingredientsTitle">Ingredients</h2>
                     <ul className='list-group list-group-flush'>
@@ -39,4 +37,18 @@ export default function CocktailInstructionsComponent({
             </div>
         </div>
     ) 
+}
+
+
+const leftCol = {
+    backgroundColor: '#f2d8b3',
+    borderColor: '#D76735', 
+    padding: '10px'
+}
+
+const rightCol = { 
+    backgroundColor: '#f2d8b3',
+    borderColor: '#D76735', 
+    marginLeft: '5px', 
+    padding: '10px'
 }
