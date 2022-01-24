@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
     return (
       <Navbar style={navStyle}>
-        <Navbar.Brand href="/" data-testid="title">sofia's cocktail site</Navbar.Brand>
+        <Navbar.Brand href="/home" data-testid="title">sofia's cocktail site</Navbar.Brand>
         <Nav className="me-auto">
-          <Link style={linkStyle} data-testid="home" to="/">Home</Link>
+          <Link style={linkStyle} data-testid="home" to="/home">Home</Link>
           <Link style={linkStyle} data-testid="about" to="/about">About</Link>
           <Link style={linkStyle} data-testid="support" to="/support">Support</Link>
         </Nav>
