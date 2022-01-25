@@ -16,7 +16,9 @@ export default class Home extends Component {
         const cocktailFavourites = JSON.parse(
             localStorage.getItem('react-cocktail-app-favourites')
         );
-        this.setState({favourites: cocktailFavourites})
+        if (cocktailFavourites) {
+            this.setState({favourites: cocktailFavourites})
+		}
     }
 
     getCocktails = async (e) => { 
@@ -24,8 +26,6 @@ export default class Home extends Component {
         e.preventDefault();
         const apiCall = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nameOfCocktail}`);      
         const result = await apiCall.json();
-
-        // todo: add some .then .. account for errors 
         this.setState({cocktailResultsObject: result.drinks})
     }
 
