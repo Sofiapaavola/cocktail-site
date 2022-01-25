@@ -47,26 +47,35 @@ export default class Home extends Component {
         this.saveToLocalStorage(newFavouriteCocktails);
     }
 
+    renderFavourites() { 
+        if (this.state.favourites !== null && this.state.favourites.length > 0) { 
+            return ( 
+            <>
+                <Heading title="Faves"></Heading>  
+                <div className='row'>
+                    <CocktailList 
+                    results={this.state.favourites}
+                    handleFavouritesClick={this.removeFavouriteCocktail} 
+                    favouriteComponent={RemoveFavourite}
+                    />
+                </div>
+            </>
+            )
+        } else return <></>           
+    }
+
     render() {
         return (
         <div>
             <SearchBar getCocktails={this.getCocktails} placeholder="search for a cocktail..."/>
             <div style={{padding: '10px'}}>     
-                <Heading title="Cocktails"></Heading>  
-                    <div className='row'>
-                        <CocktailList 
-                        handleFavouritesClick={this.addFavouriteCocktail} 
-    					favouriteComponent={AddFavourite}
-                        results={this.state.cocktailResultsObject}/>
-                    </div>
-                <Heading title="Faves"></Heading>  
-                    <div className='row'>
-                        <CocktailList 
-                        results={this.state.favourites}
-                        handleFavouritesClick={this.removeFavouriteCocktail} 
-                        favouriteComponent={RemoveFavourite}
-                        />
-                    </div>
+                <div className='row'>
+                    <CocktailList 
+                    handleFavouritesClick={this.addFavouriteCocktail} 
+                    favouriteComponent={AddFavourite}
+                    results={this.state.cocktailResultsObject}/>
+                </div>
+                {this.renderFavourites()}
             </div>
         </div>
         )
