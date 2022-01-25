@@ -17,19 +17,19 @@ test('renders title sofias cocktail site', () => {
   expect(title.textContent).toBe("sofia's cocktail site")
 });
 
-test('renders home table on nav', () => {
+test('renders home tab on nav', () => {
   const {getByTestId} = render(<MockNavBar />);
   const title = getByTestId("home"); 
   expect(title.textContent).toBe("Home")
 });
 
-test('renders about table on nav', () => {
+test('renders about tab on nav', () => {
   const {getByTestId} = render(<MockNavBar />);
   const title = getByTestId("about"); 
   expect(title.textContent).toBe("About")
 });
 
-test('renders support table on nav', () => {
+test('renders support tab on nav', () => {
   const {getByTestId} = render(<MockNavBar />);
   const title = getByTestId("support"); 
   expect(title.textContent).toBe("Support")
