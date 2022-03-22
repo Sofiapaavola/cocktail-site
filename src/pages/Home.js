@@ -10,7 +10,10 @@ export default class Home extends Component {
     state = {
         cocktailResultsObject: [],
         favourites: [],
-    }
+        cache: [],
+        cacheTimer: 0,
+        cacheTime: 10000
+    } 
 
     componentDidMount() {
         const cocktailFavourites = JSON.parse(
@@ -21,10 +24,30 @@ export default class Home extends Component {
 		}
     }
 
+    getCacheTimer = time => {
+        const now = new Date().getTime();
+        if (this.state.cacheTimer < now + time) {
+            this.state.cacheTimer = now + time
+        }
+        return this.state.cacheTimer;
+    }
+
+    fetchWithCache = async (e, time) => { 
+        const cocktailName = e.target.elements.nameOfCocktail.value;
+        const now = new Date().getTime();
+        if (!this.state.cache[cocktailName] || this.state.cache[cocktailName].cacheTimer < now) { 
+            this.setState({cache: await this.getCocktails(cocktailName)})
+            this.setState({cacheTimer: this.getCacheTimer(time)})
+            //this.state.cache[cocktailName].cacheTimer = this.getCacheTimer(time)
+        }
+        console.log('cache', this.state.cache)
+        return this.state.cache
+    }
+
     getCocktails = async (e) => { 
-        const nameOfCocktail = e.target.elements.nameOfCocktail.value;
+        const cocktailName = e.target.elements.nameOfCocktail.value;
         e.preventDefault();
-        const apiCall = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nameOfCocktail}`);      
+        const apiCall = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`);      
         const result = await apiCall.json();
         this.setState({cocktailResultsObject: result.drinks})
     }
@@ -67,7 +90,7 @@ export default class Home extends Component {
     render() {
         return (
         <div>
-            <SearchBar getCocktails={this.getCocktails} placeholder="search for a cocktail..."/>
+            <SearchBar getCocktails={this.getCocktails()} placeholder="search for a cocktail..."/>
             <div style={{padding: '10px'}}>     
                 <div className='row'>
                     <CocktailList 

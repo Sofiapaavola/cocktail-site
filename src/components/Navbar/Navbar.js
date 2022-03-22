@@ -12,6 +12,7 @@ export default function NavBar() {
           <Link style={linkStyle} data-testid="home" to="/">Home</Link>
           <Link style={linkStyle} data-testid="about" to="/about">About</Link>
           <Link style={linkStyle} data-testid="support" to="/support">Support</Link>
+          <Link style={linkStyle} data-testid="json" to="/json">JSON</Link>
         </Nav>
       </Navbar>
     );

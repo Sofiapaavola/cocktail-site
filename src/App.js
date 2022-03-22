@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Support from './pages/Support';
 import Instructions from './pages/Instructions';
+import JsonServerTest from './pages/JsonServerTest';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route path="/instructions/:id">
               <Instructions/>
+            </Route>
+            <Route path="/json">
+              <JsonServerTest/>
             </Route>
           </Switch>
         </div>
