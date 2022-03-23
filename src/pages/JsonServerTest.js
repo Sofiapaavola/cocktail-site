@@ -1,29 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import useFetch from '../customHooks/useFetch';
 
 export default function JsonServerTest() {
 
-    const [users, setUsers] = useState(null); 
-    const [isPending, setPending] = useState(true); 
-    const [error, setError] = useState(null); 
-
-    useEffect(() => { 
-        fetch('http://localhost:7777/users')
-        .then(res => { 
-            if (!res.ok) {
-                throw Error('could not fetch the data')
-            }
-            return res.json()
-        })
-        .then(data => {
-            setPending(false);
-            setUsers(data);
-            setError(null);
-        })
-        .catch(err => {
-            setPending(false); 
-            setError(err.message);
-        });
-    }, []); 
+    const { data: users, isPending, error } = useFetch('http://localhost:7777/users'); 
 
     return (
         <div className='container text-start'>
