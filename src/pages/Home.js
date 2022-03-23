@@ -12,7 +12,8 @@ export default class Home extends Component {
         favourites: [],
         cache: [],
         cacheTimer: 0,
-        cacheTime: 10000
+        cacheTime: 10000, 
+        isLoading: false
     } 
 
     componentDidMount() {
@@ -47,9 +48,10 @@ export default class Home extends Component {
     getCocktails = async (e) => { 
         const cocktailName = e.target.elements.nameOfCocktail.value;
         e.preventDefault();
+        this.setState({isLoading: true})
         const apiCall = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`);      
         const result = await apiCall.json();
-        this.setState({cocktailResultsObject: result.drinks})
+        this.setState({cocktailResultsObject: result.drinks, isLoading: false})
     }
 
     saveToLocalStorage = (items) => {
@@ -90,7 +92,8 @@ export default class Home extends Component {
     render() {
         return (
         <div>
-            <SearchBar getCocktails={this.getCocktails()} placeholder="search for a cocktail..."/>
+            <SearchBar getCocktails={this.getCocktails} placeholder="search for a cocktail..."/>
+            {this.state.isLoading && <div> Loading...</div>} 
             <div style={{padding: '10px'}}>     
                 <div className='row'>
                     <CocktailList 
